@@ -1,0 +1,115 @@
+.container-fluid {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.h-100 {
+    height: 100% !important;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.no-gutters > .col, .no-gutters > [class*=col-] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.d-lg-flex {
+    display: flex !important;
+}
+
+.col-lg-4 {
+    flex: 0 0 37.3333333333%;
+    max-width: 37.3333333333%;
+}
+
+.col-lg-8 {
+    flex: 0 0 62.6666666667%;
+    max-width: 62.6666666667%;
+}
+
+.col-lg-4,.col-lg-8{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+}
+
+.container {
+    width: 1140px;
+    max-width: 100%;
+    padding-right: 9px;
+    padding-left: 9px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bg-white {
+    background-color: #fff !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.ml-auto, .mx-auto {
+    margin-left: auto !important;
+}
+
+.mr-auto, .mx-auto {
+    margin-right: auto !important;
+}
+
+.col-xl-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+}
+
+.h2{
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #2a2a2a;
+}
+
+.m-b-30 {
+    margin-bottom: 30px !important;
+}
+
+p {
+    color: #72849a;
+    line-height: 1.8;
+}
+
+.ant-form-item {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #53535f;
+    margin: 0px;
+    margin-bottom: 24px;
+}
+
+.ant-form-item-control-input {
+    min-height: 2.4125rem;
+}
+
+.login-form{
+    font-size:28px !important;
+}

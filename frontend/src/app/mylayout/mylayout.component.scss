@@ -1,0 +1,53 @@
+.logo {
+    margin: 16px;
+    text-align: center;
+  }
+  
+  .layout {
+    min-height: 100vh;
+  }
+  
+  nz-sider {
+    overflow: auto;
+    height: 100%;
+    position: fixed;
+    left: 0;
+  }
+  
+  .right-layout {
+    margin-left: 200px;
+    width: calc(100vw - 200px) !important
+  }
+  
+  nz-header {
+    background: #fff;
+    padding: 0;
+  }
+  
+  nz-content {
+    margin: 24px 16px 0;
+    overflow: initial;
+  }
+  
+  .inner-content {
+    padding: 24px;
+    background: #fff;
+    text-align: center;
+  }
+  
+  nz-footer {
+    text-align: center;
+  }
+
+  .side-bar-end{
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .logout-pos{
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }

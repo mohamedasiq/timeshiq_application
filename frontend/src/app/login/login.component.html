@@ -1,0 +1,48 @@
+<div class="container-fluid p-0 h-100">
+    <div class="row no-gutters h-100">
+        <div class="col-lg-4 d-none d-lg-flex">
+            <img nz-image width="100%" src="assets/images/others/login.png" alt="" style="object-fit:contain;height:100vh"/>
+            <a href="https://www.freepik.com/free-vector/flat-creativity-concept-illustration_14620625.htm#query=illustrations&position=2&from_view=search&track=sph">Image by pikisuperstar</a> on Freepik
+        </div>
+        <div class="col-lg-8 bg-white" style="font-size:16px;">
+            <div class="container h-100">
+                <div class="row no-gutters h-100 align-items-center">
+                    <div class="col-md-8 col-lg-7 col-xl-6 mx-auto">
+                        <h2>Sign In</h2>
+                        <p class="m-b-30">Enter your credential to get access</p>
+                        <form nz-form [formGroup]="loginForm" nzLayout="vertical" class="login-form" (ngSubmit)="submitForm()">
+                            <nz-form-item>
+                                <nz-form-label nzRequired nzFor="userName">Username</nz-form-label>
+                                <nz-form-control nzErrorTip="Please input your username!">
+                                    <nz-input-group [nzPrefix]="prefixUser">
+                                        <input type="text" nz-input formControlName="userName" placeholder="Username">
+                                    </nz-input-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                            <nz-form-item>
+                                <nz-form-label nzRequired nzFor="password">Password</nz-form-label>
+                                <nz-form-control nzErrorTip="Please input your Password!">
+                                    <nz-input-group [nzPrefix]="prefixLock" [nzSuffix]="suffixTemplate">
+                                        <input [type]="passwordVisible ? 'password' : 'text'" nz-input formControlName="password" placeholder="Password">
+                                    </nz-input-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                            <nz-form-item>
+                                <nz-form-control>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <button nz-button class="login-form-button" [disabled]="login" [nzType]="'primary'">Sign In</button>
+                                    </div>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </form>
+                        <ng-template #prefixUser><i nz-icon nzType="user"></i></ng-template>
+                        <ng-template #prefixLock><i nz-icon nzType="lock"></i></ng-template>
+                        <ng-template #suffixTemplate>
+                            <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'" (click)="passwordVisible = !passwordVisible"></i>
+                        </ng-template>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>

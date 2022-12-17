@@ -1,0 +1,45 @@
+<button nz-button (click)="addRow()" nzType="primary">Add</button>
+    <br />
+    <br />
+    <nz-table #editRowTable nzBordered [nzData]="listOfData">
+      <thead>
+        <tr>
+          <th nzWidth="20%">Display Name</th>
+          <th nzWidth="20%">Email ID</th>
+          <th nzWidth="10%">Password</th>
+          <th nzWidth="15%">Role</th>
+          <th nzWidth="15%">TimeSheet</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of editRowTable.data" class="editable-row">
+         <ng-container *ngIf="!editCache[data._id].edit; else editTemplate">
+            <td>{{ data.display_name }}</td>
+            <td>{{ data.email_id }}</td>
+            <td>{{ data.password }}</td>
+            <td>{{ data.role }}</td>
+            <td><a *ngIf="data.email_id && data.role != 'admin'" (click)="downloadExcel(data._id)">Download</a></td>
+            <td>
+                <a class='p-10' (click)="startEdit(data._id)">Edit</a>
+                <a class='p-10' nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data._id,data.email_id)">Delete</a>
+            </td>
+           </ng-container>
+           <ng-template #editTemplate> 
+            <td><input type="text" nz-input [(ngModel)]="editCache[data._id].data.display_name" /></td>
+            <td><input type="text" nz-input [(ngModel)]="editCache[data._id].data.email_id" /></td>
+            <td><input type="text" nz-input [(ngModel)]="editCache[data._id].data.password" /></td>
+            <td><nz-select [(ngModel)]="editCache[data._id].data.role">
+                <!-- <nz-option nzValue="Admin" nzLabel="Admin"></nz-option> -->
+                <nz-option nzValue="user" nzLabel="User"></nz-option>
+                </nz-select>
+            </td>
+            <td></td>
+             <td>
+               <a (click)="saveEdit(data._id)" class="save p-10">Save</a>
+               <a class='p-10' nz-popconfirm nzPopconfirmTitle="Sure to cancel?" (nzOnConfirm)="cancelEdit(data._id)">Cancel</a>
+             </td>
+         </ng-template>
+        </tr>
+      </tbody>
+</nz-table>
